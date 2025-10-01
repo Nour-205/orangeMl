@@ -67,6 +67,5 @@ class MiniBatchKMeans:
     def predict_failure(self, X, centroid):
         # Predict if new data point X is close to failure centroid
         dists = np.sum((centroid - X) ** 2)
-        k = np.argmin(dists)
-        prob_failure = np.exp(-dists[k]) # decay function to get probability , bigger d means smaller prob
+        prob_failure = np.exp(-dists) # decay function to get probability , bigger d means smaller prob
         return prob_failure 
